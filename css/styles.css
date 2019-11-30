@@ -1,0 +1,65 @@
+body {
+    background-color: linen;
+}
+#top-part{
+    background-image: linear-gradient(to bottom right, linen, burlywood );
+    padding:0.5rem;
+    margin-top: 1rem;
+    border: 1px double white;
+    font-family: 'Comfortaa', cursive;
+}
+.address-input{
+    width:50%;
+}
+.city-input{
+    width:50%;
+}
+
+#input-button{
+    margin-top: 2.5rem;
+}
+#main{
+    margin-top: 1rem;
+}
+
+#section-one {
+    padding:0.5rem;
+    border: 1px solid black;
+
+}
+.additional-info{
+    font-weight: 400;
+    color: lightslategrey;
+}
+.toggler{
+    width: 100%;
+    background-color:black ;
+    color: linen;
+    border: 1px solid blanchedalmond;
+    border-radius: 10px;
+    padding-left: 0.1rem;
+}
+#weather{
+    border: 1px solid whitesmoke;
+  
+}
+#city-info{
+    border: 1px solid whitesmoke;
+
+
+}
+#section-two {
+    padding:0.5rem;
+    border: 1px solid black;
+
+}
+#news{  
+    border: 1px solid whitesmoke; 
+ 
+ 
+}
+#com-shop-etc{
+    border: 1px solid whitesmoke;
+
+
+}
