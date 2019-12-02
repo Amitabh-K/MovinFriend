@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>MovinFriend</title>
+    
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css" media="screen">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -26,83 +28,78 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
+  <!-- Style to fix the issue of text extending past card length -->
 </head>
 <body>
-    
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+
+
       
-      <div id="top-part" class="row"> 
-          <div class="five columns">
-          <h4>When moving cities, we all need a guiding friend</h4>
-          <hr>
-          <form class="additional-info">
-            <h5>Additional Categories</h5>
-              <input type="checkbox" name="community" value="">Community/Religion
-              <input type="checkbox" name="shopping" value=""> Shopping/Supplies
-          </form>
-          </div>
-          <div class="seven columns">
-             <form >
-               <label for="exampleEmailInput">Address</label>
-               <input class="address-input" type="email" placeholder="234 King St West" id="exampleEmailInput">
-               <label for="exampleEmailInput">City</label>
-               <input class="city-input" type="email" placeholder="Calgary" id="exampleEmailInput"><br>
-               <input type="submit" value="Find">
-             </form>
-          </div>
-        </div>       
-    </div>
-
-
-
-
  
-   <div id="main" class="container">
-      <div id="section-one" class="row">
-          <!-- weather display for the weekly forcast -->
-          <div id="weather" class="one-half column">
-          
-                <h5 class="toggler"><button>=</button> Current Weather</h5>
-                <div class = "weather-display">
-                    <img src="https://freefrontend.com/assets/img/css-weather-widgets/css-weather-widget.png" height="250px" width="100%">
-              </div>
-           
-          </div>
-          <!-- city info includes (wiki or a few basic statistics) -->
-          <div id="city-info" class="one-half column">
-         
-                  <h5 class="toggler"><button>=</button> General Info</h5>
-                  <div class="city-info">
-                      <img src="https://ottawa.ca/sites/default/files/inline-media/web-eco-dev-stats-population-en.png" height="200px" width="100%">
-                  </div>  
+    <div class="container">
+      
+        <div id="top-part" class="row"> 
+            <div class="five columns">
+            <h4>When moving cities, we all need a guiding friend</h4>
+            <hr>
+            <form class="additional-info">
+              <h5>Additional Categories</h5>
+                <input type="checkbox" name="community" value="">Community/Religion
+                <input type="checkbox" name="shopping" value=""> Shopping/Supplies
+            </form>
+            </div>
+            <div class="seven columns">
+              <form id="form-container" class="form-container">
+                <label for="street">Street: </label><input type="text" id="street" value="">
+                <label for="city">City: </label><input type="text" id="city" value="">
+                <button id="submit-btn">Submit</button>
+            </form>
+            </div>
+          </div>       
+      </div> 
+     <div id="main" class="container">
+        <div id="section-one" class="row">
+            <!-- weather display for the weekly forcast -->
+            <div id="weather" class="one-half column">
             
-        </div>
-      </div>
-      <div id="section-two" class="row">
-         <!-- top news articles about the city -->
-         <div id="news" class="twelve columns">
-          
-               <h5 class="toggler"><button>=</button> Local News</h5> 
-               <div id="news-links">
-                  <img src="http://sites.cardiff.ac.uk/insciout/files/2014/07/headlines_3.jpg" height="400px" width="100%">
-               </div>
-        
+                  <h5 class="toggler"><button>=</button> Current Weather</h5>
+                  <div class = "weather-display">
+                      <img src="https://freefrontend.com/assets/img/css-weather-widgets/css-weather-widget.png" height="250px" width="100%">
+                </div>
+             
+            </div>
+            <!-- city info includes (wiki or a few basic statistics) -->
+            <div id="city-info" class="one-half column">
            
+                    <h5 class="toggler"><button>=</button> General Info</h5>
+                    <div class="city-info">
+                        <img src="https://ottawa.ca/sites/default/files/inline-media/web-eco-dev-stats-population-en.png" height="200px" width="100%">
+                    </div>  
+              
           </div>
-      </div>
-   </div>
-
-
-
+        </div>
+        <div id="section-two" class="row">
+           <!-- top news articles about the city -->
+           <div id="news" class="twelve columns">
+            
+                 <h5 class="toggler"><button>=</button> Local News</h5> 
+                 <div class="nytimes-container">
+                  <h3 id="nytimes-header">Local News Articles</h3>
+                  <ul id="nytimes-articles" class="article-list"></ul>
+              </div>
+          
+             
+            </div>
+        </div>
+     </div>
+  
+  <!-- End Document <!-- page container header incl-->
 
     
-
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="app.js"></script>
+    
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Code to the JavaScript File -->
+  <script src="./app.js"></script>    
 </body>
 </html>
