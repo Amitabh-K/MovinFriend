@@ -2,17 +2,17 @@ body {
     background-color: linen;
 }
 #top-part{
-    background-image: linear-gradient(to bottom right, linen, burlywood );
+    background-image: linear-gradient(to bottom right, burlywood , linen);
     padding:0.5rem;
     margin-top: 1rem;
-    border: 1px double white;
+    
     font-family: 'Comfortaa', cursive;
 }
 .address-input{
-    width:50%;
+    width:85%;
 }
 .city-input{
-    width:50%;
+    width:85%;
 }
 
 #input-button{
@@ -32,12 +32,27 @@ body {
     color: lightslategrey;
 }
 .toggler{
-    width: 100%;
-    background-color:black ;
-    color: linen;
-    border: 1px solid blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    background-color: darkslategrey ;
+    color: goldenrod;
+    border: 1px solid goldenrod;
     border-radius: 10px;
-    padding-left: 0.1rem;
+    padding-right: 1rem;
+    font-weight: 400;   
+}
+.toggle-button{
+    margin: 0.5rem;
+    background-color: goldenrod;
+    
+    
+}
+.toggle-button:hover{
+    background-color: gold;
+    width:8rem;
 }
 #weather{
     border: 1px solid whitesmoke;
