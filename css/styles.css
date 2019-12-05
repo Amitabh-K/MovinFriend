@@ -8,6 +8,13 @@ body {
     border: 1px double white;
     font-family: 'Comfortaa', cursive;
 }
+
+
+#weather{
+    background-image: url(../images/Weather.jpg)  
+    
+} 
+
 .address-input{
     width:50%;
 }
