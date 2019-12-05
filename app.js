@@ -56,8 +56,8 @@ function loadData() {
 
 $('#form-container').submit(loadData);
 
-
 */
+
 
 
 
@@ -94,23 +94,18 @@ $(document).ready(function(){
             for(var i in latestNews){
               //using backticks so that can write html w/o concatenation
               output +=`
-                <div class="col l6 m6 s12">
-                <h4>${latestNews[i].title}</h4>
+                <div class="col-12 py-2 my1">
+                <h5>${latestNews[i].title}</h5>
                 <img src="${latestNews[i].urlToImage}" class="responsive-img">
-                <p>${latestNews[i].description}</p>
-                <p>${latestNews[i].content}</p>
-                <p>Published on: ${latestNews[i].publishedAt}</p>
-                <a href="${latestNews[i].url}" class="btn">Read more</a>
+                <p>Dated: ${latestNews[i].publishedAt}</p>
+                <a href="${latestNews[i].url}" class="btn">Read more</a>               
                 </div>
               `;
             }
              //till there is data 
             if(output !== ""){
               $("#newsResults").html(output);
-               M.toast({
-                html: "There you go, nice reading",
-                classes: 'green'
-              });
+               
               // once output is blank
 
             }else{            
@@ -118,7 +113,7 @@ $(document).ready(function(){
                $("#newsResults").html(noNews);
               M.toast({
                 html: "No news for the City",
-                classes: 'red'
+                
               });
             }
             
@@ -133,7 +128,7 @@ $(document).ready(function(){
             $("#newsResults").html(internetFailure);
              M.toast({
                 html: "We encountered an error, please try again",
-                classes: 'red'
+                
               });
           }
           

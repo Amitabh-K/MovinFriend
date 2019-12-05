@@ -8,6 +8,19 @@ body {
     border: 1px double white;
     font-family: 'Comfortaa', cursive;
 }
+
+
+#weather{
+    background-image: url(../images/Weather.jpg)  
+    
+} 
+
+.responsive-img{
+height: 50%;
+width: 50%;
+
+}
+
 .address-input{
     width:50%;
 }
@@ -61,6 +74,12 @@ body {
 #com-shop-etc{
     border: 1px solid whitesmoke;
 
+}
+
+.btn{
+background-color: #26a69a;
+color: whitesmoke;
+font-weight: bold;
 
 }
 
