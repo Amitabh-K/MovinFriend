@@ -16,8 +16,8 @@ body {
 } 
 
 .responsive-img{
-height: 50%;
-width: 50%;
+height: 50%, fit-content;
+width: 50% ;
 
 }
 
