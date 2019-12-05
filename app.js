@@ -122,7 +122,7 @@ $(document).ready(function(){
           error: function(){
              var internetFailure = `
              <div style="font-size:34px; text-align:center; margin-top:40px;">Please check your internet connection and try again.
-             <img src="img/internet.png" class="responsive-img">
+             <img src="https://image.shutterstock.com/image-vector/system-failure-abstract-technology-background-600w-746163787.jpg" class="responsive-img">
              </div>`;
              
             $("#newsResults").html(internetFailure);
