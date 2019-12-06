@@ -83,3 +83,9 @@ font-weight: bold;
 
 }
 
+
+  .active, .toggler:hover {
+    background-color: #555;
+  }
+  
+

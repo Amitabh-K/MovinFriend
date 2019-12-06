@@ -185,7 +185,7 @@ $(document).ready(function(){
           // Create an HTML element to store variable city name
   
           var elementH3 = $("<p>").text(name + " " + currentTime);
-          elementH3.addClass("title");
+          elementH3.addClass("panel-heading");
   
           // append element H3 to Div with classname = search result
   
@@ -235,8 +235,27 @@ $(document).ready(function(){
   //
   
   })
-  
+  $("#submit-btn").click(function(){
+    $("#main").show();
+  });
   
 
 });
+
+
+var coll = document.getElementsByClassName("toggler");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
 
