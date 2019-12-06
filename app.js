@@ -235,7 +235,9 @@ $(document).ready(function(){
   //
   
   })
-  
+  $("#submit-btn").click(function(){
+    $("#main").show();
+  });
   
 
 });
@@ -255,3 +257,5 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
