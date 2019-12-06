@@ -68,7 +68,7 @@ $(document).ready(function(){
       // defining variables
       var query = $("#city").val();
       // adding newus api wiht querry also API key
-      var url = "https://newsapi.org/v2/everything?q="+query+"&sortBy=popularity&apiKey=7dc0f278dd4541128c558c191e758ae5";
+      var url = "https://newsapi.org/v2/everything?q="+query+"&sources=cbc-news&apiKey=7dc0f278dd4541128c558c191e758ae5";
       // preventing page
       if(query !== ""){
         
@@ -94,11 +94,12 @@ $(document).ready(function(){
             for(var i in latestNews){
               //using backticks so that can write html w/o concatenation
               output +=`
-                <div class="col-12 py-2 my1">
-                <h5>${latestNews[i].title}</h5>
+                <div class="col-6">
+                <h6>${latestNews[i].title}</h6>
                 <img src="${latestNews[i].urlToImage}" class="responsive-img">
-                <p>Dated: ${latestNews[i].publishedAt}</p>
-                <a href="${latestNews[i].url}" class="btn">Read more</a>               
+                <p>${latestNews[i].description}</p>   
+                <p>${latestNews[i].content}</p>           
+                <a href="${latestNews[i].url}" class="btn p-1">Read more</a>         
                 </div>
               `;
             }
