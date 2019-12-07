@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>MovinFriend</title>
+    
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css" media="screen">
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCfQVyk9G3EJZV4S9veNijBAft4IGE5bJI&callback=init" async defer></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -26,6 +30,7 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Plotly -->
@@ -61,8 +66,15 @@
 
 
 
+  <!-- Style to fix the issue of text extending past card length -->
+</head>
+<body>
 
+
+
+      
  
+
    <div id="main" class="container">
       <div id="section-one" class="row">
           <!-- weather display for the weekly forcast -->
@@ -70,8 +82,52 @@
           
                 <h5 class="toggler"><button id='weather-button' class="toggle-button">=</button> Current Weather</h5>
               
+
+    <div class="container">
+      
+        <div id="top-part" class="row"> 
+            <div class="five columns">
+            <h4>When moving cities, we all need a guiding friend</h4>
+            <hr>
+            <form class="additional-info">
+              <h5>Additional Categories</h5>
+                <input type="checkbox" name="community" value="">Community/Religion
+                <input type="checkbox" name="shopping" value=""> Shopping/Supplies
+            </form>
+            </div>
+            <div class="seven columns">
+              <form id="form-container" class="form-container">
+                <label for="street">Street: </label><input type="text" placeholder="234 King St West"  id="street" value="">
+                <label for="city">City: </label><input type="text" placeholder="Calgary" id="city" value="">
+                <br>
+                <button id="submit-btn">Submit</button>
+            </form>
+            </div>
+          </div>       
+      </div> 
+     <div id="main" class="container">
+        <div  id="section-one" class="row">
+            <!-- weather display for the weekly forcast -->
+            <div id="weather" class="one-half column">
+            
+                  <h5 class="toggler"><button>=</button> Current Weather</h5>
+                  <div class = "weather-display">                      
+                    <p class="search-result">                  
+                    </p> 
+                </div>
+             
+            </div>
+            <!-- city info includes (wiki or a few basic statistics) -->
+            <div id="city-info" class="one-half column">
+
            
+                    <h5 class="toggler"><button>=</button> General Info</h5>
+                    <div class="city-info">
+                        <img src="https://ottawa.ca/sites/default/files/inline-media/web-eco-dev-stats-population-en.png" height="200px" width="100%">
+                    </div>  
+              
           </div>
+
           <!-- city info includes (wiki or a few basic statistics) -->
           <div id="city-info" class="one-half column">
             <h5 class="toggler"><button class="toggle-button">=</button> Regional Info</h5>
@@ -142,8 +198,25 @@
                 <div id="crime-graph">
                   <!-- ... -->
                 </div>
+
         </div>
+        <div id="section-two" class="row">
+           <!-- top news articles about the city -->
+           <div id="news" class="twelve columns">
+            
+                 <h5 class="toggler"><button>=</button> Local News</h5> 
+                 <div class="nytimes-container">
+                  <h3 id="nytimes-header">Local News Articles</h3>
+                  <div>
+                  <div class="row" id="newsResults"></div>
+              </div>
+            </div>
+           </div>
+
+        </div>
+
       </div>
+
       <div id="section-two" class="row">
          <!-- top news articles about the city -->
          <div id="news" class="twelve columns">
@@ -175,11 +248,22 @@
 
 
 
+
+  
+  
+  <!-- End Document <!-- page container header incl-->
+
     
-
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="app.js"></script>
+    
+  <!-- jQuery JS -->
+  
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
+  <!-- Code to the JavaScript File -->
+  <script src="./app.js"></script>    
 </body>
 </html>

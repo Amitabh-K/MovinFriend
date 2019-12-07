@@ -9,6 +9,27 @@ body {
     width: 100%;
     font-family: 'Comfortaa', cursive;
 }
+
+
+.weather-display{
+    background-image: url(../images/Weather.jpg)
+      
+     
+    
+} 
+
+.search-result{
+margin: 5%;
+}
+
+
+
+.responsive-img{
+height: 50%, fit-content;
+width: 50% ;
+
+}
+
 .address-input{
     width:85%;
 }
@@ -79,6 +100,28 @@ body {
 }
 #com-shop-etc{
     border: 1px solid whitesmoke;
+
+}
+
+.btn{
+background-color: #26a69a;
+color: whitesmoke;
+font-weight: bold;
+
+}
+
+
+  .active, .toggler:hover {
+    background-color: #555;
+  }
+
+  .panel-heading{
+margin: 2%;
+font-weight: 600;
+margin-bottom: 0%;
+padding-top: 4%;
+}
+
 
 
 }
