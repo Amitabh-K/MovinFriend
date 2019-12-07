@@ -50,8 +50,8 @@
             </div>
             <div class="seven columns">
               <form id="form-container" class="form-container">
-                <label for="street">Street: </label><input type="text" placeholder="234 King St West"  id="street" value="">
                 <label for="city">City: </label><input type="text" placeholder="Calgary" id="city" value="">
+                <label for="street">Province </label><input type="text" placeholder="ON"  id="province" value="">
                 <br>
                 <button id="submit-btn">Submit</button>
             </form>
@@ -61,28 +61,9 @@
             
      <div id="main" class="container">
         <div  id="section-one" class="row">
-            <!-- weather display for the weekly forcast -->
-            <div id="weather" class="one-half column">
-            
-                  <h5 class="toggler"><button>=</button> Current Weather</h5>
-                  <div class = "weather-display">                      
-                    <p class="search-result">                  
-                    </p> 
-                </div>
-             
-            </div>
-            <!-- city info includes (wiki or a few basic statistics) -->
-            <div id="city-info" class="one-half column">
-
-           
-                    <h5 class="toggler"><button>=</button> General Info</h5>
-                    <div class="city-info">
-                        <img src="https://ottawa.ca/sites/default/files/inline-media/web-eco-dev-stats-population-en.png" height="200px" width="100%">
-                    </div> 
-          </div>
 
           <!-- city info includes (wiki or a few basic statistics) -->
-          <div id="city-info" class="one-half column">
+          <div id="city-info" class="twelve columns">
             <h5 class="toggler"><button class="toggle-button">=</button> Regional Info</h5>
             <ul>
                 <label>Weekly Earnings</label>
@@ -153,34 +134,8 @@
                 </div>
 
         </div>
-        <div id="section-two" class="row">
-           <!-- top news articles about the city -->
-           <div id="news" class="twelve columns">
-            
-                 <h5 class="toggler"><button>=</button> Local News</h5> 
-                 <div class="nytimes-container">
-                  <h3 id="nytimes-header">Local News Articles</h3>
-                  <div>
-                  <div class="row" id="newsResults"></div>
-              </div>
-            </div>
-           </div>
-
-        </div>
-
       </div>
-
-
-      <div id="section-two" class="row">
-         <!-- top news articles about the city -->
-         <div id="news" class="twelve columns">
-          
-               <h5 class="toggler"><button class="toggle-button">=</button> Local News</h5> 
-               <div id="news-links">
-                  <img src="http://sites.cardiff.ac.uk/insciout/files/2014/07/headlines_3.jpg" height="400px" width="100%">
-               </div>
-          </div>
-      </div>
+        
       <div id="section-three" class="row">
         <div  class="twelve columns">
           <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Entertainment</h5> 
