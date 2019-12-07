@@ -13,10 +13,12 @@ body {
     
 }
 #top-part{
-    background-image:  linear-gradient(to bottom right, linen, burlywood );
+
+    background-image: linear-gradient(to bottom right, burlywood , linen);
     padding:0.5rem;
     margin-top: 1rem;
-    border: 1px double white;
+    max-width: 1125px;
+    width: 100%;
     font-family: 'Comfortaa', cursive;
 }
 
@@ -39,10 +41,10 @@ width: 50% ;
 }
 
 .address-input{
-    width:50%;
+    width:85%;
 }
 .city-input{
-    width:50%;
+    width:85%;
 }
 
 #input-button{
@@ -50,6 +52,8 @@ width: 50% ;
 }
 #main{
     margin-top: 1rem;
+    max-width: 1125px;
+    width: 100%;
 }
 
 #section-one {
@@ -62,12 +66,27 @@ width: 50% ;
     color: lightslategrey;
 }
 .toggler{
-    width: 100%;
-    background-color:black ;
-    color: linen;
-    border: 1px solid blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    background-color: darkslategrey ;
+    color: goldenrod;
+    border: 1px solid goldenrod;
     border-radius: 10px;
-    padding-left: 0.1rem;
+    padding-right: 1rem;
+    font-weight: 400;   
+}
+.toggle-button{
+    margin: 0.5rem;
+    background-color: goldenrod;
+    
+    
+}
+.toggle-button:hover{
+    background-color: gold;
+    width:8rem;
 }
 #weather{
     border: 1px solid whitesmoke;
@@ -75,9 +94,10 @@ width: 50% ;
 }
 #city-info{
     border: 1px solid whitesmoke;
-
-
+    
+    color: rgb(150, 11, 11);
 }
+
 #section-two {
     padding:0.5rem;
     border: 1px solid black;
@@ -113,3 +133,41 @@ padding-top: 4%;
 }
 
 
+
+}
+#section-three{
+    padding:0.5rem;
+    border: 1px solid black;
+    background: burlywood;
+}
+.event-name{
+    font-size:18px;
+    color: brown;
+    font-weight: 400;
+
+
+    width: 95%;
+    
+}
+.event-date{
+    color:darkslategrey;
+    opacity: 0.8;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+#tickets-events{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+#all-events{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid darkslategrey;
+}
