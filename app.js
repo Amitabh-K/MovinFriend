@@ -244,7 +244,7 @@
              $('#ent-button').click(function(){
               var wquery;
 
-              wquery = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=CA&city=Calgary&classificationName=music&apikey=GwTwXQi9DbfiHSen5gClF1DLybWdAUhj`;
+              wquery = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=CA&city=Toronto&classificationName=music&apikey=GwTwXQi9DbfiHSen5gClF1DLybWdAUhj`;
 
               $.ajax({
                  url: wquery,
