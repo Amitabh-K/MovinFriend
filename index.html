@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./style.css" media="screen">
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCfQVyk9G3EJZV4S9veNijBAft4IGE5bJI&callback=init" async defer></script>
 
 
     <!-- Bootstrap CSS CDN  -->
@@ -30,61 +29,15 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div id="top-part" class="container">
-      
-      <div class="row"> 
-          <div class="five columns">
-          <h4>When moving cities, we all need a guiding friend</h4>
-          <hr>
-          <form class="additional-info">
-            <h5>Additional Categories</h5>
-              <input type="checkbox" name="community" value="">Community/Religion
-              <input type="checkbox" name="shopping" value=""> Shopping/Supplies
-          </form>
-          </div>
-          <div class="seven columns">
-             <form >
-               <label for="exampleEmailInput">Address</label>
-               <input class="address-input" type="email" placeholder="234 King St West" id="exampleEmailInput">
-               <label for="exampleEmailInput">City</label>
-               <input class="city-input" type="email" placeholder="Calgary" id="exampleEmailInput"><br>
-               <input type="submit" value="Find">
-             </form>
-          </div>
-        </div>       
-    </div>
-
-
-
-  <!-- Style to fix the issue of text extending past card length -->
-</head>
-<body>
-
-
-
-      
- 
-
-   <div id="main" class="container">
-      <div id="section-one" class="row">
-          <!-- weather display for the weekly forcast -->
-          <div id="weather" class="one-half column">
-          
-                <h5 class="toggler"><button id='weather-button' class="toggle-button">=</button> Current Weather</h5>
-              
 
     <div class="container">
-      
         <div id="top-part" class="row"> 
             <div class="five columns">
             <h4>When moving cities, we all need a guiding friend</h4>
@@ -105,6 +58,7 @@
             </div>
           </div>       
       </div> 
+            
      <div id="main" class="container">
         <div  id="section-one" class="row">
             <!-- weather display for the weekly forcast -->
@@ -124,8 +78,7 @@
                     <h5 class="toggler"><button>=</button> General Info</h5>
                     <div class="city-info">
                         <img src="https://ottawa.ca/sites/default/files/inline-media/web-eco-dev-stats-population-en.png" height="200px" width="100%">
-                    </div>  
-              
+                    </div> 
           </div>
 
           <!-- city info includes (wiki or a few basic statistics) -->
@@ -217,6 +170,7 @@
 
       </div>
 
+
       <div id="section-two" class="row">
          <!-- top news articles about the city -->
          <div id="news" class="twelve columns">
@@ -250,20 +204,14 @@
 
 
   
-  
-  <!-- End Document <!-- page container header incl-->
 
-    
-    
-  <!-- jQuery JS -->
-  
-  
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
   
   <!-- Code to the JavaScript File -->
-  <script src="./app.js"></script>    
+  <script src="./app.js"></script>
+
+    
+  
 </body>
 </html>

@@ -1,7 +1,19 @@
 body {
     background-color: linen;
+
+}
+
+.bgimg {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index:-1;
+    opacity: 1;
+    
 }
 #top-part{
+
     background-image: linear-gradient(to bottom right, burlywood , linen);
     padding:0.5rem;
     margin-top: 1rem;
@@ -13,9 +25,7 @@ body {
 
 .weather-display{
     background-image: url(../images/Weather.jpg)
-      
-     
-    
+        
 } 
 
 .search-result{

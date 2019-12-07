@@ -338,7 +338,7 @@ fetch(req)
     })
 
  
-function loadData() {
+
 
     var $body = $('body');
     var $nytHeaderElem = $('#nytimes-header');
@@ -387,12 +387,29 @@ $('#form-container').submit(loadData);
 
 
 
+// above not working
+
+
+
+
+
 $(document).ready(function(){
+  var query = $("#city").val();
+  (function loadData() {
+    var streetStr = $('#street').val();
+    var address =streetStr + ',' + query;
+    
+    var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + address  +  '&key=AIzaSyCfQVyk9G3EJZV4S9veNijBAft4IGE5bJI';
+    
+    $('body').append('<img class="bgimg" src="' + streetviewUrl + '">');
+    
+  
+    })();
     // adding newus api wiht querry also API key
     $("#submit-btn").on("click",function(e){
       e.preventDefault();
       // defining variables
-      var query = $("#city").val();
+     // var query = $("#city").val();
       // adding newus api wiht querry also API key
       var url = "https://newsapi.org/v2/everything?q="+query+"&sources=cbc-news&apiKey=7dc0f278dd4541128c558c191e758ae5";
       // preventing page
@@ -469,13 +486,7 @@ $(document).ready(function(){
                 classes: 'red'
               });
       }
-
-    
-    
-    
-    
-      
-      
+  
     });
 
     
@@ -548,14 +559,9 @@ $(document).ready(function(){
           var elementP3 = $("<p>").text("Wind Speed: " + windSpeed + " MPH");
                     
   
-          $(".search-result").append(elementP3);
-          
+          $(".search-result").append(elementP3);          
 
-          var elementP4 = $("<p>");                    
-  
-          $(".search-result").append(elementP4);
-
-          
+                    
   
           //set variable for UV index API call
   
@@ -566,6 +572,7 @@ $(document).ready(function(){
       })
    
   //
+ 
   
   })
   $("#submit-btn").click(function(){
@@ -590,6 +597,4 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-
-
 
