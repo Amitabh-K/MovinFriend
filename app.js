@@ -5,8 +5,8 @@
 
     $( document ).ready(function() {
 //________________________________________________________________________________________>
-        var city = document.querySelector('#city');
-        var province = document.querySelector('#province');
+        var cityInput = document.querySelector('#city');
+        var provinceInput = document.querySelector('#province');
         //All DOM Selectors(Naz)
          
         var employment, earnings,homeOwn, homeInc, uniInc;
@@ -28,8 +28,10 @@
         
         const regions = ["Canada","Newfoundland and Labrador","Prince Edward Island","Nova Scotia","New Brunswick","Quebec","Ontario","Manitoba","Saskatchewan","Alberta","British Columbia","Yukon","Northwest Territories","Nunavut",];
    
-        var province = regions.indexOf('Ontario');
-        console.log(province);
+        var province;
+        $('#submit-btn').on('click', function(e){
+            e.preventDefault();
+            province = regions.indexOf(provinceInput.value);
             var query = "https://cors-anywhere.herokuapp.com/https://www150.statcan.gc.ca/n1/dai-quo/ssi/homepage/ind-all.json";
             $.ajax({
                 url: query,
@@ -161,7 +163,9 @@
                             title: 'Individual Weekly Earning',
                             yaxis: {range: [700, 1200]},
                             paper_bgcolor: '#faf0e6',
-                            plot_bgcolor:  '#faf0e6'
+                            plot_bgcolor:  '#faf0e6',
+                            width: '500',
+                            height: '500'
                             };
                   
                 Plotly.newPlot('weekly-earnings', data, layout);
@@ -243,6 +247,9 @@
                 console.log(response);
              });
 
+        });
+       
+            
              $('#ent-button').click(function(){
               var wquery;
 
