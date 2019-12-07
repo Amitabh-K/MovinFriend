@@ -10,10 +10,18 @@ body {
 }
 
 
-#weather{
-    background-image: url(../images/Weather.jpg)  
+.weather-display{
+    background-image: url(../images/Weather.jpg)
+      
+     
     
 } 
+
+.search-result{
+margin: 5%;
+}
+
+
 
 .responsive-img{
 height: 50%, fit-content;
@@ -87,5 +95,12 @@ font-weight: bold;
   .active, .toggler:hover {
     background-color: #555;
   }
-  
+
+  .panel-heading{
+margin: 2%;
+font-weight: 600;
+margin-bottom: 0%;
+padding-top: 4%;
+}
+
 

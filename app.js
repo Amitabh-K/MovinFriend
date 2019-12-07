@@ -95,10 +95,9 @@ $(document).ready(function(){
               //using backticks so that can write html w/o concatenation
               output +=`
                 <div class="col-6">
-                <h6>${latestNews[i].title}</h6>
+                <h5>${latestNews[i].title}</h5>
                 <img src="${latestNews[i].urlToImage}" class="responsive-img">
-                <p>${latestNews[i].description}</p>   
-                <p>${latestNews[i].content}</p>           
+                <p>${latestNews[i].description}</p>
                 <a href="${latestNews[i].url}" class="btn p-1">Read more</a>         
                 </div>
               `;
@@ -184,8 +183,8 @@ $(document).ready(function(){
   
           // Create an HTML element to store variable city name
   
-          var elementH3 = $("<p>").text(name + " " + currentTime);
-          elementH3.addClass("panel-heading");
+          var elementH3 = $("<h5>").text(name + " " + currentTime);
+          elementH3.addClass("panel-heading text");
   
           // append element H3 to Div with classname = search result
   
@@ -221,8 +220,16 @@ $(document).ready(function(){
           var windSpeed = response.wind.speed;
   
           var elementP3 = $("<p>").text("Wind Speed: " + windSpeed + " MPH");
+                    
   
           $(".search-result").append(elementP3);
+          
+
+          var elementP4 = $("<p>");                    
+  
+          $(".search-result").append(elementP4);
+
+          
   
           //set variable for UV index API call
   
@@ -231,7 +238,7 @@ $(document).ready(function(){
             });
   
       })
-  
+   
   //
   
   })
