@@ -27,14 +27,17 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <div id="top-part" class="container">
       
-      <div id="top-part" class="row"> 
+      <div class="row"> 
           <div class="five columns">
           <h4>When moving cities, we all need a guiding friend</h4>
           <hr>
@@ -65,20 +68,80 @@
           <!-- weather display for the weekly forcast -->
           <div id="weather" class="one-half column">
           
-                <h5 class="toggler"><button class="toggle-button">=</button> Current Weather</h5>
-                <div class = "weather-display">
-                    <img src="https://freefrontend.com/assets/img/css-weather-widgets/css-weather-widget.png" height="250px" width="100%">
-              </div>
+                <h5 class="toggler"><button id='weather-button' class="toggle-button">=</button> Current Weather</h5>
+              
            
           </div>
           <!-- city info includes (wiki or a few basic statistics) -->
           <div id="city-info" class="one-half column">
-         
-                  <h5 class="toggler"><button class="toggle-button">=</button> Regional Info</h5>
-                  <div class="city-info">
-                      <img src="https://ottawa.ca/sites/default/files/inline-media/web-eco-dev-stats-population-en.png" height="200px" width="100%">
-                  </div>  
-            
+            <h5 class="toggler"><button class="toggle-button">=</button> Regional Info</h5>
+            <ul>
+                <label>Weekly Earnings</label>
+                <li id="earnings">One</li>
+                <label>Unemployment</label>
+                <li id="employment">Two</li>
+              </ul>
+              <div id="weekly-earnings">
+
+              </div>
+   
+              <table class="u-full-width">
+                  <h3>Economic Markers</h3>
+                  <thead>
+                      <tr >
+                        <th>Home Ownership Rate</th>
+                        <th>Household Income</th>
+                        <th>University Graduate Income </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="home-own">...</td>
+                        <td id="house-inc">...</td>
+                        <td id="uni-inc">...</td>                   
+                      </tr>
+                      </tbody>
+                </table>
+                <div id="yearly-income">
+
+                </div>
+                <h3>Crime</h3>
+                <table class="u-full-width">
+                    <thead>
+                        <tr >
+                          <th>Homicide Victims</th>
+                          <th>Homicide rate (per 100,000)</th>
+                          <th>Criminal Reports(per 100,000)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="homicide">...</td>
+                          <td id="homicide-rate">...</td>
+                          <td id="crime-reports">...</td>                   
+                        </tr>
+                        </tbody>
+                  </table>
+                <table class="u-full-width">
+                  <h3>Crime Indeces</h3>
+                  <thead>
+                      <tr >
+                        <th>Crime Index</th>
+                        <th>Non-violent Crime Index</th>
+                        <th>Violent Crime Index </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="crime">...</td>
+                        <td id="non-violent">...</td>
+                        <td id="violent">...</td>                   
+                      </tr>
+                      </tbody>
+                </table>
+                <div id="crime-graph">
+                  <!-- ... -->
+                </div>
         </div>
       </div>
       <div id="section-two" class="row">
@@ -89,9 +152,23 @@
                <div id="news-links">
                   <img src="http://sites.cardiff.ac.uk/insciout/files/2014/07/headlines_3.jpg" height="400px" width="100%">
                </div>
-        
-           
           </div>
+      </div>
+      <div id="section-three" class="row">
+        <div  class="twelve columns">
+          <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Entertainment</h5> 
+          <div id="tickets-events" class="row">
+            <!-- <div class="four columns">
+              <div class="event-name">Calgary Flames vs Toronto Maple Leafs</div>
+              <div class="event-date">12/11/2019</div>
+              <a class="button button-primary">Tickets</a>
+              <div class="event-img">
+                <img  src="https://i.pinimg.com/originals/f0/61/08/f06108bc21b5e431fe150e57602e5e98.gif" width="100px" height="auto">
+              </div>
+              
+            </div> -->
+          </div>
+        </div>
       </div>
    </div>
 

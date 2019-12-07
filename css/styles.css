@@ -5,7 +5,8 @@ body {
     background-image: linear-gradient(to bottom right, burlywood , linen);
     padding:0.5rem;
     margin-top: 1rem;
-    
+    max-width: 1125px;
+    width: 100%;
     font-family: 'Comfortaa', cursive;
 }
 .address-input{
@@ -20,6 +21,8 @@ body {
 }
 #main{
     margin-top: 1rem;
+    max-width: 1125px;
+    width: 100%;
 }
 
 #section-one {
@@ -60,9 +63,10 @@ body {
 }
 #city-info{
     border: 1px solid whitesmoke;
-
-
+    
+    color: rgb(150, 11, 11);
 }
+
 #section-two {
     padding:0.5rem;
     border: 1px solid black;
@@ -77,4 +81,40 @@ body {
     border: 1px solid whitesmoke;
 
 
+}
+#section-three{
+    padding:0.5rem;
+    border: 1px solid black;
+    background: burlywood;
+}
+.event-name{
+    font-size:18px;
+    color: brown;
+    font-weight: 400;
+
+
+    width: 95%;
+    
+}
+.event-date{
+    color:darkslategrey;
+    opacity: 0.8;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+#tickets-events{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+#all-events{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid darkslategrey;
 }
