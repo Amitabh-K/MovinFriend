@@ -29,8 +29,12 @@
         const regions = ["Canada","Newfoundland and Labrador","Prince Edward Island","Nova Scotia","New Brunswick","Quebec","Ontario","Manitoba","Saskatchewan","Alberta","British Columbia","Yukon","Northwest Territories","Nunavut",];
    
         var province;
+        $('#main').css("display","none");
+       
         $('#submit-btn').on('click', function(e){
             e.preventDefault();
+            $('#tickets-events').html("");
+
             province = regions.indexOf(provinceInput.value);
             var query = "https://cors-anywhere.herokuapp.com/https://www150.statcan.gc.ca/n1/dai-quo/ssi/homepage/ind-all.json";
             $.ajax({
@@ -141,7 +145,7 @@
                     name: 'Regional',
                     marker:{
                         color:'#6699cc',
-                        opacity: 0.5,
+                        opacity: 0.9,
                       },
                     type: 'bar',
                   };
@@ -152,7 +156,7 @@
                     name: 'Country',
                     marker:{
                         color: ['#cc9966'],
-                        opacity: 0.5
+                        opacity: 0.9
                       },
                     type: 'bar'
                   };
@@ -160,13 +164,13 @@
                   var data = [provincialEarning, countryEarning];
                   
                   var layout = {barmode: 'group',
+                            width: "450",
+                            height: "330",
                             title: 'Individual Weekly Earning',
                             yaxis: {range: [700, 1200]},
                             paper_bgcolor: '#faf0e6',
-                            plot_bgcolor:  '#faf0e6',
-                            width: '500',
-                            height: '500'
-                            };
+                            plot_bgcolor:  '#faf0e6',  
+                        };
                   
                 Plotly.newPlot('weekly-earnings', data, layout);
                 //Yearly Income Graph
@@ -196,12 +200,12 @@
                             {
                                 barmode: 'group',
                                 title: 'Regional and Country-Wide Income Comparison',
-                                xaxis: {
-                                    tickangle: -45
-                                  },
                                 yaxis: {range: [40000, 80000]},
                                 paper_bgcolor: '#faf0e6',
-                                plot_bgcolor:  '#faf0e6'
+                                plot_bgcolor:  '#faf0e6',
+                                width: "450",
+                                height: "330"
+                               
                             };
 
                     Plotly.newPlot('yearly-income', data, layout);
@@ -226,7 +230,7 @@
                     name: 'Country Average',
                     marker:{
                         color: ['#ffa500', '#ffc04c', '#ffb732'],
-                        opacity: [0.7,0.7,0.7]
+                        opacity: [0.9,0.9,0.9]
                       },
                     type: 'bar'
                   };
@@ -234,59 +238,57 @@
                   var data = [provincialData, countryData];
                   var layout = {barmode: 'group',
                                 title: 'Regional and Country-Wide Crime Comparisons',
-                                xaxis: {
-                                    tickangle: -45
-                                  },
                                 paper_bgcolor: '#faf0e6',
-                                plot_bgcolor:  '#faf0e6' 
+                                plot_bgcolor:  '#faf0e6',
+                                width: "450",
+                                height: "330" 
                                 };
                   Plotly.newPlot('crime-graph', data, layout);
-
-                console.log(canadaCrime,canadaViolent, canadaNonViolent);
-                console.log(provinceCrime, provinceViolent, provinceNonViolent);
-                console.log(response);
+                  $('#main').css("display", "block");
+             
              });
+             var wquery;
+             var cityQuery = cityInput.value;
+             wquery = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=CA&city=${cityQuery}&classificationName=music&apikey=GwTwXQi9DbfiHSen5gClF1DLybWdAUhj`;
 
+             $.ajax({
+                url: wquery,
+                method: "GET"
+              }).then(function(res){
+                 for(var x = 0; x < 6; x++){
+                   var event = res._embedded.events[x].name;
+                   var eventDate = res._embedded.events[x].dates.start.localDate;
+                   var eventTime = res._embedded.events[x].dates.start.localTime;
+                   var eventImg = res._embedded.events[x].images[x].url;
+                   var eventPurchase = res._embedded.events[x].url;
+
+                   var html = ` <div id="all-events" class="three columns">
+                                <div class="event-name">%name%</div>
+                                <div class="event-date">%date%</div>
+                                <a class="button button-primary" href="%buy%" rel="noopener noreferrer" target="_blank">Tickets</a>
+                                <div class="event-img">
+                                  <img  src="%pic%" width="250px" height="150px">
+                                </div>
+                              </div>`;
+                    var newHtml = html.replace("%name%",event).replace("%date%",`${eventDate} ${eventTime}`).replace("%buy%",eventPurchase).replace("%pic%",eventImg);
+                    $('#tickets-events').append(newHtml);         
+                 }
+                 
+                 
+                 // console.log(res._embedded.events[0].name);
+                
+                 // console.log(res._embedded.events[0].dates.start.localDate);
+                 // console.log(res._embedded.events[0].dates.start.localTime);
+                 // console.log(res._embedded.events[0].images[0].url);
+                    
+                });
+       
         });
        
             
-             $('#ent-button').click(function(){
-              var wquery;
+            
+              
 
-              wquery = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=CA&city=Toronto&classificationName=music&apikey=GwTwXQi9DbfiHSen5gClF1DLybWdAUhj`;
-
-              $.ajax({
-                 url: wquery,
-                 method: "GET"
-               }).then(function(res){
-                  for(var x = 0; x < 3; x++){
-                    var event = res._embedded.events[x].name;
-                    var eventDate = res._embedded.events[x].dates.start.localDate;
-                    var eventTime = res._embedded.events[x].dates.start.localTime;
-                    var eventImg = res._embedded.events[x].images[x].url;
-                    var eventPurchase = res._embedded.events[x].url;
-
-                    var html = ` <div id="all-events" class="four columns">
-                                 <div class="event-name">%name%</div>
-                                 <div class="event-date">%date%</div>
-                                 <a class="button button-primary" href="%buy%">Tickets</a>
-                                 <div class="event-img">
-                                   <img  src="%pic%" width="95%" height="auto">
-                                 </div>
-                               </div>`;
-                     var newHtml = html.replace("%name%",event).replace("%date%",`${eventDate} ${eventTime}`).replace("%pic%",eventImg);
-                     $('#tickets-events').append(newHtml);           
-                  }
-                  
-                  // console.log(res._embedded.events[0]);
-                  // console.log(res._embedded.events[0].name);
-                 
-                  // console.log(res._embedded.events[0].dates.start.localDate);
-                  // console.log(res._embedded.events[0].dates.start.localTime);
-                  // console.log(res._embedded.events[0].images[0].url);
-                     
-                 });
-            });
 
              
              
@@ -363,30 +365,7 @@ fetch(req)
 
 
 
-    // load nytimes
-    var nytimesUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${cityStr}&api-key=hnBAPj1FFGUSX5ULP7XmAzyZmoAbiwgA`;
-
-
-    $.getJSON(nytimesUrl, function(data){
-
-        $nytHeaderElem.text('Local News Articles About ' + cityStr);
-
-        articles = data.response.docs;
-        for (var i = 0; i < articles.length; i++) {
-            var article = articles[i];
-            $nytElem.append('<li class="article">'+
-                '<a href="'+article.web_url+'">'+article.headline.main+'</a>'+
-                '<p>' + article.snippet + '</p>'+
-            '</li>');
-        };
-
-    }).error(function(e){
-        $nytHeaderElem.text('Local News Articles Could Not Be Loaded');
-    });
-
-
-    return false;
-};
+    
 
 $('#form-container').submit(loadData);
 

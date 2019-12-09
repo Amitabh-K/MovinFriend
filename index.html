@@ -31,7 +31,7 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.css">
   <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -40,18 +40,14 @@
     <div class="container">
         <div id="top-part" class="row"> 
             <div class="five columns">
-            <h4>When moving cities, we all need a guiding friend</h4>
-            <hr>
-            <form class="additional-info">
-              <h5>Additional Categories</h5>
-                <input type="checkbox" name="community" value="">Community/Religion
-                <input type="checkbox" name="shopping" value=""> Shopping/Supplies
-            </form>
+             <img id="plane" src="images/air-transport.png"><img id="tdot" src="images/toronto.png">
+            <h5>When moving cities, we all need a guiding friend</h5>
+            
             </div>
             <div class="seven columns">
               <form id="form-container" class="form-container">
-                <label for="city">City: </label><input type="text" placeholder="Calgary" id="city" value="">
-                <label for="street">Province </label><input type="text" placeholder="ON"  id="province" value="">
+                <label for="city">City: </label><input type="text" placeholder="enter city" id="city" value="">
+                <label for="province">Province </label><input type="text" placeholder="enter province"  id="province" value="">
                 <br>
                 <button id="submit-btn">Submit</button>
             </form>
@@ -60,131 +56,145 @@
       </div> 
             
      <div id="main" class="container">
-        <div  id="section-one" class="row">
-
+        <div  id="section-one" class="t-el row">
+            <h5 class="toggler"><button id="tg-1" class="toggle-button">=</button> Regional Info</h5>
           <!-- city info includes (wiki or a few basic statistics) -->
-          <div id="city-info" class="twelve columns">
-            <h5 class="toggler"><button class="toggle-button">=</button> Regional Info</h5>
-            <ul>
-                <label>Weekly Earnings</label>
-                <li id="earnings">One</li>
-                <label>Unemployment</label>
-                <li id="employment">Two</li>
-              </ul>
-              <div id="weekly-earnings">
-
-              </div>
-  
-              <table class="u-full-width">
-                  <h3>Economic Markers</h3>
-                  <thead>
-                      <tr >
-                        <th>Home Ownership Rate</th>
-                        <th>Household Income</th>
-                        <th>University Graduate Income </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td id="home-own">...</td>
-                        <td id="house-inc">...</td>
-                        <td id="uni-inc">...</td>                   
-                      </tr>
+         
+          <div class="stat-font ">
+              <h2 id="econ-header">Economy  <img src="images/graphic.png"></h2>
+              <p>Individuals Weekly Earnings- <span id="earnings"></span></p><br>
+              <p>Unemployment rate is at <span id="employment"></span></p><br>    
+          </div>            
+          <div id="weekly-earnings">
+             <!-- weekly earnings -->
+           </div>
+          </div>  
+            <div class="t-el row">
+              <div class="six columns">
+                  <table class="table-1 u-pull-left">
+                      <thead>
+                          <tr >
+                            <th>Home Ownership Rate</th>
+                            <th>Household Income</th>
+                            <th>University Graduate Income </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                            <td id="home-own">...</td>
+                            <td id="house-inc">...</td>
+                            <td id="uni-inc">...</td>                   
+                          </tr>
                       </tbody>
-                </table>
-                <div id="yearly-income">
-
-                </div>
-                <h3>Crime</h3>
-                <table class="u-full-width">
+                    </table>
+                    <h2 class="stat-title">Crime Statistics...<img src="images/custody.png">...<img src="images/custody.png"></h2>
+                    <table class="table-2 u-full-width">
+                        <thead>
+                            <tr >
+                              <th>Homicide Victims</th>
+                              <th>Homicide rate (per 100,000)</th>
+                              <th>Criminal Reports(per 100,000)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td id="homicide">...</td>
+                              <td id="homicide-rate">...</td>
+                              <td id="crime-reports">...</td>                   
+                            </tr>
+                            </tbody>
+                    </table>
+              </div>
+              <div class="six columns">
+                 <div id="yearly-income">
+                  <!-- Yearly Income Graph -->
+                 </div>
+              </div>
+            </div>
+            <div class="t-el row">
+              <div class="six columns">  
+                  <table class="table-2 u-full-width">
                     <thead>
                         <tr >
-                          <th>Homicide Victims</th>
-                          <th>Homicide rate (per 100,000)</th>
-                          <th>Criminal Reports(per 100,000)</th>
+                          <th>Crime Index</th>
+                          <th>Non-violent Crime Index</th>
+                          <th>Violent Crime Index </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td id="homicide">...</td>
-                          <td id="homicide-rate">...</td>
-                          <td id="crime-reports">...</td>                   
+                          <td id="crime">...</td>
+                          <td id="non-violent">...</td>
+                          <td id="violent">...</td>                   
                         </tr>
                         </tbody>
                   </table>
-                <table class="u-full-width">
-                  <h3>Crime Indeces</h3>
-                  <thead>
-                      <tr >
-                        <th>Crime Index</th>
-                        <th>Non-violent Crime Index</th>
-                        <th>Violent Crime Index </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td id="crime">...</td>
-                        <td id="non-violent">...</td>
-                        <td id="violent">...</td>                   
-                      </tr>
-                      </tbody>
-                </table>
-                <div id="crime-graph">
-                  <!-- ... -->
-                </div>
-        </div>
-      </div>
-        
-      <div id="section-three" class="row">
-        <div  class="twelve columns">
-          <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Entertainment</h5> 
-          <div id="tickets-events" class="row">
-            <!-- <div class="four columns">
-              <div class="event-name">Calgary Flames vs Toronto Maple Leafs</div>
-              <div class="event-date">12/11/2019</div>
-              <a class="button button-primary">Tickets</a>
-              <div class="event-img">
-                <img  src="https://i.pinimg.com/originals/f0/61/08/f06108bc21b5e431fe150e57602e5e98.gif" width="100px" height="auto">
+                  <img class="jail" src="images/jail.png"><img class="jail" src="images/jail.png"><img class="jail" src="images/jail.png"><img class="jail" src="images/jail.png"><img class="jail" src="images/jail.png"><img class="jail" src="images/jail.png">
               </div>
-              
-            </div> -->
-          </div>
-        </div>
-      </div>
+              <div class="six columns">
+                  <div id="crime-graph">
+                      <!-- ... -->
+                    </div>
+                   
+              </div>
+            </div>       
+        
+       
 
-
-     <div id="section-four" class="row">
-        <div  class="twelve columns">
-          <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Local News</h5> 
-          <div class="row" id="newsResults"></div>           
-          </div>
-        </div>
-
-        <div id="section-five" class="row">
-          <div  class="twelve columns">
-            <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Local News</h5> 
-            <div class = "weather-display">                      
-              <p class="search-result"> </p> 
-            </div>           
+       
+        <div id="section-four" class="row">
+           <div  class="twelve columns">
+             <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Local News</h5> 
+             <div class="row" id="newsResults"></div>           
+             </div>
+           </div>
+           <div id="section-three" class="row">
+            <div id="col-three"  class="twelve columns">
+              <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Entertainment</h5> 
+              <div id="tickets-events" class="row">
+                <!-- <div class="four columns">
+                  <div class="event-name">Calgary Flames vs Toronto Maple Leafs</div>
+                  <div class="event-date">12/11/2019</div>
+                  <a class="button button-primary">Tickets</a>
+                  <div class="event-img">
+                    <img  src="https://i.pinimg.com/originals/f0/61/08/f06108bc21b5e431fe150e57602e5e98.gif" width="100px" height="auto">
+                  </div>
+                  
+                </div> -->
+              </div>
             </div>
-          </div>    
+          </div>
 
-
+       
+<!--        
+  Cannot use because the values are stacking each time a new city is entered, no time to fix and minor component  
+    ****** <div id="section-five" class="row">
+             <div  class="twelve columns">
+               <h5 class="toggler"><button id="ent-button" class="toggle-button">=</button> Local News</h5> 
+               <div class = "weather-display">                      
+                 <p class="search-result"> </p> 
+               </div>           
+               </div>
+             </div> ************ -->
+             
+             
+           </div> 
+         
+           
+         
+         
+         
+         
+         
+         
+         
+     
       
-
-
-
-
-
-
-
-   </div>
-   
-
-
-
-
-
+    
+    
+    
+    
+    
   
 
 
