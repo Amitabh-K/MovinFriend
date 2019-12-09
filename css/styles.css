@@ -2,6 +2,14 @@ body {
     background-color: linen;
 
 }
+thead{
+    background: rgb(243, 197, 150);
+    padding: 1rem;
+}
+tbody{
+    background: linen;
+    padding:1rem;
+}
 
 .bgimg {
     position:fixed;
@@ -21,7 +29,23 @@ body {
     width: 100%;
     font-family: 'Comfortaa', cursive;
 }
-
+#earnings{
+    font-style: italic;
+    border-bottom: 2px double goldenrod;
+    border-top: 2px double goldenrod;
+    background: seashell;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    
+}
+#employment{
+    font-style: italic;
+    border-bottom: 2px double goldenrod;
+    border-top: 2px double goldenrod;
+    background: seashell;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
 
 .weather-display{
     background-image: url(../images/Weather.jpg)
@@ -57,9 +81,12 @@ width: 50% ;
 }
 
 #section-one {
-    padding:0.5rem;
-    border: 1px solid black;
+    width: 100%;
 
+}
+#econ-header{
+    font-weight: 400;
+    border-bottom: 3px double gold;
 }
 .additional-info{
     font-weight: 400;
@@ -70,7 +97,7 @@ width: 50% ;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 100%;
     background-color: darkslategrey ;
     color: goldenrod;
     border: 1px solid goldenrod;
@@ -112,7 +139,24 @@ width: 50% ;
     border: 1px solid whitesmoke;
 
 }
-
+#tdot{
+    
+    border-bottom: 2px solid darkorange;
+    border-right: 2px solid darkorange;
+    border-radius: 65px;
+    padding:1rem;
+}
+#plane{
+   
+    border-top: 2px solid #26a69a;
+    border-left: 2px solid #26a69a;
+    border-radius: 60px;
+    margin-right:2rem;
+    padding:1rem;
+}
+.jail{
+    margin-left: 2.5rem;
+}
 .btn{
 background-color: #26a69a;
 color: whitesmoke;
@@ -125,7 +169,7 @@ font-weight: bold;
     background-color: #555;
   }
 
-  .panel-heading{
+.panel-heading{
 margin: 2%;
 font-weight: 600;
 margin-bottom: 0%;
@@ -134,19 +178,27 @@ padding-top: 4%;
 
 
 
-}
 #section-three{
-    padding:0.5rem;
-    border: 1px solid black;
-    background: burlywood;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom,linen, rgb(250, 229, 209));
+    margin-bottom: 1rem;
 }
 .event-name{
     font-size:18px;
     color: brown;
     font-weight: 400;
-
-
+    background-image: linear-gradient(to bottom right, linen , gold);
+    border:0px solid black;
+    border-radius: 10px;
     width: 95%;
+    
+}
+.event-img{
+    
+    border:3px solid gold;
     
 }
 .event-date{
@@ -154,20 +206,71 @@ padding-top: 4%;
     opacity: 0.8;
     font-style: italic;
     margin-bottom: 2rem;
+    margin-top:0.5rem;
 }
 #tickets-events{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     align-items: center;
-    width: 95%;
+    width: 100%;
+    overflow-x: scroll;
+
 }
 #all-events{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center; 
+}
+#col-three{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+
+.stat-font{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    font-size: 28px;
+    color: rgb(59, 32, 59);
+}
+.table-1{
+    margin-left: 2rem;
+    height:7rem;
+    font-size: 16px;
+    color: rgb(122, 84, 122);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.table-2{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    height:7rem;
+    font-size: 16px;
+    color: darkslategrey;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.stat-title{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    color: darkslategray;
+    margin-left: 1.0rem;
+    margin-top: 7rem;
+   border-bottom: 3px double gold;
+  
+}
+
+#newsResults{
+    margin-left: 0.2rem;
+    max-height: 600px;
+    overflow-y: scroll;
     text-align: center;
-    border: 1px solid darkslategrey;
 }

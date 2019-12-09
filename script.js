@@ -36,7 +36,7 @@ $(document).ready(function(){
                 <h5>${latestNews[i].title}</h5>
                 <img src="${latestNews[i].urlToImage}" class="responsive-img">
                 <p>${latestNews[i].description}</p>
-                <a href="${latestNews[i].url}" class="btn p-1">Read more</a>         
+                <a href="${latestNews[i].url}" rel="noopener noreferrer" target="_blank" class="btn p-1">Read more</a>         
                 </div>
               `;
             }
