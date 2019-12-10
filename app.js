@@ -275,7 +275,7 @@
                  }
                  
                  
-                 // console.log(res._embedded.events[0].name);
+                
                 
                  // console.log(res._embedded.events[0].dates.start.localDate);
                  // console.log(res._embedded.events[0].dates.start.localTime);

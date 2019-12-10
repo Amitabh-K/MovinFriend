@@ -135,33 +135,11 @@ $(document).ready(function(){
           $(".search-result").append(elementP1);
   
   
-          //create a variable to store humidity data
+          //create a variable to store humidity date            
   
-          var humidity = response.main.humidity;
-  
-          // create a HTML element and assign humidity data to it
-  
-          var elementP2 = $("<p>").text("Humidity: " + humidity + "%");
-  
-          //  append humidity data to Div with classname = search result   
-  
-          $(".search-result").append(elementP2);
-  
-          //create a varialbe to store wind speed value
-  
-          var windSpeed = response.wind.speed;
-  
-          var elementP3 = $("<p>").text("Wind Speed: " + windSpeed + " MPH");
-                    
-  
-          $(".search-result").append(elementP3);          
-
-                    
-  
-          //set variable for UV index API call
-  
-          $( "#searchbtn" ).click(function() {
+          $( "#submit-btn" ).click(function() {
               $( ".search-result" ).empty();
+              $(".search-result").append(elementP3); 
             });
   
       })

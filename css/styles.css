@@ -48,8 +48,9 @@ tbody{
 }
 
 .weather-display{
-    background-image: url(../images/Weather.jpg)
-        
+    background-image: linear-gradient(to bottom right,linen  , burlywood );
+    border: 0px solid white;
+    border-radius: 60px;
 } 
 
 .search-result{
