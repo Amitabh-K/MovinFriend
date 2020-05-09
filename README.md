@@ -1,3 +1,6 @@
+[![HitCount](http://hits.dwyl.com/Amitabh-K/MovinFriend.svg)](http://hits.dwyl.com/Amitabh-K/MovinFriend)
+
+
 # MovinFriend
 Collaborative project using API's 
 
